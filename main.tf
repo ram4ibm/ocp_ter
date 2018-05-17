@@ -1,7 +1,7 @@
 provider "aws" {
-  region    =   "eu-west-2"
+  region = "${var.ocp_region}"
 }
 
-resource "aws_security_group" "ocp_master"  {
-    
+module "ocp_vpc" {
+  source = "./ocp_vpc"
 }
